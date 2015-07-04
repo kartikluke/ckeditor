@@ -78,22 +78,6 @@ module Ckeditor
         # Files at root
         files = Dir[folder.join(extensions)]
 
-        # Filter plugins
-        if Ckeditor.assets_plugins.nil?
-          files += Dir[folder.join('plugins', '**', extensions)]
-        else
-          Ckeditor.assets_plugins.each do |plugin|
-            files += Dir[folder.join('plugins', plugin, '**', extensions)]
-          end
-        end
-
-        # Other folders
-        Dir[folder.join('*/')].each do |subfolder|
-          path = Pathname.new(subfolder)
-          next if ['plugins'].include?(path.basename.to_s)
-          files += Dir[path.join('**', extensions)]
-        end
-
         files.inject([]) do |items, name| 
           file = Pathname.new(name)
           base = file.basename('.*').to_s
