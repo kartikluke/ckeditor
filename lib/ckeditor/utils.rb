@@ -76,7 +76,7 @@ module Ckeditor
         languages = (Ckeditor.assets_languages || [])
 
         # Files at root
-        files = Dir[folder.join(extensions)]
+        files = []
 
         files.inject([]) do |items, name| 
           file = Pathname.new(name)
