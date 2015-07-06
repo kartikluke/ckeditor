@@ -70,12 +70,6 @@ module Ckeditor
       end
 
       def select_assets(path, relative_path)
-        relative_folder = Ckeditor.root_path.join(relative_path)
-        folder = relative_folder.join(path)
-        extensions = '*.{js,css,png,gif,jpg}'
-        languages = (Ckeditor.assets_languages || [])
-
-        # Files at root
         files = []
 
         # files.inject([]) do |items, name| 
