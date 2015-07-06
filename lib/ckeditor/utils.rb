@@ -78,16 +78,16 @@ module Ckeditor
         # Files at root
         files = []
 
-        files.inject([]) do |items, name| 
-          file = Pathname.new(name)
-          base = file.basename('.*').to_s
+        # files.inject([]) do |items, name| 
+        #   file = Pathname.new(name)
+        #   base = file.basename('.*').to_s
 
-          if !name.include?('/lang/') || languages.include?(base)
-            items << file.relative_path_from(relative_folder).to_s
-          end
+        #   if !name.include?('/lang/') || languages.include?(base)
+        #     items << file.relative_path_from(relative_folder).to_s
+        #   end
 
-          items
-        end
+        #   items
+        # end
       end
     end
   end
